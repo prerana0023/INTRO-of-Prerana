@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerana Nandi - Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+            height: 100vh;
+            color: hsl(349, 9%, 35%);
+            display: flex;
+            flex-direction: column;
+            justify-content:center ;
+            align-items:center ;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero img {
+            width: 200px;
+            height: 250px;
+            border-radius: 100%;
+            margin-bottom: 50px;
+            border: 3px solid #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section:nth-child(odd) {
+            background: linear-gradient(to right, #ffe4e1, #d8bfd8);
+          color: #333;
+         border: 2px solid #d8bfd8;
+         transition: all 0.3s ease;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(to right, #fcf6f6, #9cb8cd);
+          color: #333;
+         border: 2px solid #b0d6f4;
+         transition: all 0.3s ease;
+            
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .education-item {
+    margin-bottom: 20px;
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.education-details h3 {
+    margin-bottom: 5px;
+}
+
+.education-details p {
+    margin-bottom: 2px;
+    font-size: 0.9em;
+}
+/* Hobbies and Interests Section */
+#hobbies {
+    background: linear-gradient(to right, #ffe4e1, #d8bfd8);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#hobbies h2, #hobbies h3 {
+    color: #333;
+}
+
+.hobby-button,
+.interest-button {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #d8bfd8;
+    transition: all 0.3s ease;
+}
+
+.hobby-button:hover,
+.interest-button:hover {
+    background-color: #d8bfd8;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.progress {
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+.python-bar {
+    background-color: #3498db; /* Change this to your desired color */
+}
+
+.cpp-bar {
+    background-color: #e67e22;
+}
+
+.js-bar {
+    background-color: #5567f5;
+}
+
+        }
+        .timeline {
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .timeline-event {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .timeline-date {
+        flex: 0 0 100px;
+        font-weight: bold;
+        color: #007bff;
+        text-align: center;
+    }
+
+    .timeline-content {
+        flex-grow: 1;
+        padding: 10px 20px;
+        background: #f5f5f5;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-content h3 {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p {
+        margin: 5px 0 0;
+        color: #555;
+    }
+        /* Social Media Icons */
+        .social-icons {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .social-icons a {
+            color: #333;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #d79999;
+            color: rgb(186, 140, 229);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        /* Rock, Paper, Scissors Styling */
+#rock-paper-scissors {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 10px;
+}
+
+.game-button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.game-button:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+    text-align: center;
+}
+
+.result {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Prerana Nandi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Achivements">Achivements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#social media">Social Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="interactive game">Interactive Game </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="C:\Users\User\Downloads\IMG_0110.JPG" alt="Prerana Nandi" class="img-fluid mb-4" style="width: 150px;">
+        <div class="text-center">
+            <h1>Hello, I'm Prerana Nandi</h1>
+            <p>A Computer Science & Engineering Student</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p class="text-center">I am a Computer Science student passionate about developing innovative solutions to real-world problems using technology.Hello! I'm a Computer Science student passionate about coding, software development, and solving real-world problems through technology. I have experience in programming languages like Python, Java, and C++, and I'm constantly exploring new tools and technologies.</p>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+        
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>High School -(2015-2019)</h3>
+                    <p>Bangladesh Military Academy </p>
+                    <p>Science</p>
+                    <p>GPA-5.00</p>
+                </div>
+            </div>
+        
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>College- 2019-2021</h3>
+                    <p>Bangladesh Mohila Somity Girl's High School & College</p>
+                    <p>Science</p>
+                    <p>GPA-5.00</p>
+                </div>
+            </div>
+        
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>Higher Education - Fall 2024</h3>
+                    <p> Premier University Chattogram</p>
+                    <p>Bachelor of Computer Science & Engineering </p>
+                    <p>CGPA-3.50</p>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">Portfolio of mine.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">Description of the second project.</p>
+                            <a href=""F:\2nd Semester\pp.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">Description of the third project.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+       <!-- Skills Section -->
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skill">
+        <p>Python</p>
+        <div class="progress">
+            <div class="progress-bar python-bar" role="progressbar" style="width: 75%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <p>C++</p>
+        <div class="progress">
+            <div class="progress-bar cpp-bar" role="progressbar" style="width: 70%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress">
+            <div class="progress-bar js-bar" role="progressbar" style="width: 65%;"></div>
+        </div>
+    </div>
+</section>
+        </section>
+        <!-- Achievements Timeline Section -->
+<section id="achievements-timeline" class="section">
+    <h2>Achievements Timeline</h2>
+    <div class="timeline">
+        <div class="timeline-event">
+            <div class="timeline-date">2020</div>
+            <div class="timeline-content">
+                <h3>Started Learning HTML</h3>
+                <p>Began the journey of web development by mastering the basics of HTML.</p>
+            </div>
+        </div>
+        <div class="timeline-event">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-content">
+                <h3>Built First Web Page</h3>
+                <p>Created a personal portfolio website showcasing skills and projects.</p>
+            </div>
+        </div>
+        <div class="timeline-event">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-content">
+                <h3>Learned JavaScript</h3>
+                <p>Enhanced web interactivity by diving into JavaScript programming.</p>
+            </div>
+        </div>
+        <div class="timeline-event">
+            <div class="timeline-date">2023</div>
+            <div class="timeline-content">
+                <h3>Created Interactive Games</h3>
+                <p>Developed mini-games like Rock, Paper, Scissors to make learning fun.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="container mt-5">
+            <h2>Hobbies</h2>
+            <p>In my spare time, I spend my time on some of my hobbies and interests like:</p>
+            <button class="hobby-button btn btn-outline-primary mb-2">Listening to Music</button>
+            <button class="hobby-button btn btn-outline-primary mb-2">Singing</button>
+            <button class="hobby-button btn btn-outline-primary mb-2">Drawing</button>
+            <h3>Interests</h3>
+            <p>I am passionate about software development, artificial intelligence, and machine learning and mostly i like to do this:</p>
+            <button class="interest-button btn btn-outline-success mb-2">Web Development</button>
+            <button class="interest-button btn btn-outline-success mb-2">Graphics Designing</button>
+            <button class="interest-button btn btn-outline-success mb-2">Robotics Designing</button>
+        </section>
+
+        <!-- Social Media Section -->
+        <section id="social-media" class="section">
+            <h2>Social Media</h2>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+</head>
+<body>
+    <header>
+        <h1>Interactive Games</h1>
+    </header>
+
+    <main>
+        <!-- Rock, Paper, Scissors Game Section -->
+        <section id="rock-paper-scissors" class="section">
+            <h2>Rock, Paper, Scissors</h2>
+            <p class="text-center">Play a quick game of Rock, Paper, Scissors!</p>
+            <div class="text-center">
+                <button class="game-button btn btn-primary" data-choice="rock">Rock</button>
+                <button class="game-button btn btn-primary" data-choice="paper">Paper</button>
+                <button class="game-button btn btn-primary" data-choice="scissors">Scissors</button>
+            </div>
+            <div class="result mt-4 text-center">
+                <h3 id="game-result"></h3>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Rock, Paper, Scissors Game Logic
+        const gameButtons = document.querySelectorAll('.game-button');
+        const resultDisplay = document.getElementById('game-result');
+
+        // Game choices
+        const choices = ['rock', 'paper', 'scissors'];
+
+        // Function to play the game
+        function playGame(playerChoice) {
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+            let result = '';
+
+            // Determine the winner
+            if (playerChoice === computerChoice) {
+                result = `It's a tie! You both chose ${playerChoice}.`;
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper') ||
+                (playerChoice === 'paper' && computerChoice === 'rock')
+            ) {
+                result = `You win! ${playerChoice} beats ${computerChoice}.`;
+            } else {
+                result = `You lose! ${computerChoice} beats ${playerChoice}.`;
+            }
+
+            // Display the result
+            resultDisplay.textContent = result;
+        }
+
+        // Add event listeners to game buttons
+        gameButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const playerChoice = button.dataset.choice;
+                playGame(playerChoice);
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
